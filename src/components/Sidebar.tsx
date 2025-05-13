@@ -21,33 +21,33 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
       {!isOpen && (
         <button
           onClick={toggleSidebar} // Use prop
-          className="fixed top-4 left-4 z-50 p-2 bg-primary text-white rounded-md hover:bg-primary/80 flex items-center justify-center w-10 h-10"
+          className="fixed top-5 left-5 z-50 p-2 bg-slate-700 text-white rounded-full shadow-lg hover:bg-slate-600 transition-colors flex items-center justify-center w-10 h-10"
           aria-label="Open sidebar"
         >
-          <ChevronRightIcon className="h-6 w-6" />
+          <ChevronRightIcon className="h-5 w-5" />
         </button>
       )}
 
       {/* The Sidebar itself, animated */}
       <aside
-        className={`fixed top-0 left-0 h-full z-40 w-64 bg-background text-foreground p-5 border-r border-secondary flex flex-col transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`} // Use prop
+        className={`fixed top-0 left-0 h-full z-40 w-64 bg-slate-800 text-slate-100 p-6 shadow-xl flex flex-col transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`} // Use prop
       >
         {/* Button to CLOSE the sidebar (part of the sidebar, moves with it) */}
         <button
           onClick={toggleSidebar} // Use prop
-          className="absolute top-4 right-4 z-10 p-2 bg-primary text-white rounded-md hover:bg-primary/80 flex items-center justify-center w-10 h-10"
+          className="absolute top-5 right-5 z-10 p-2 bg-slate-700 text-white rounded-full shadow-lg hover:bg-slate-600 transition-colors flex items-center justify-center w-10 h-10 cursor-pointer"
           aria-label="Close sidebar"
         >
-          <ChevronLeftIcon className="h-6 w-6" />
+          <ChevronLeftIcon className="h-5 w-5" />
         </button>
         
         {/* Sidebar Content */}
-        <div className="text-center w-full pt-10"> {/* Added pt-10 to provide space for the close button above */}
-          <h1 className="text-3xl font-bold mb-5 text-primary inline-block">AttentID</h1>
-          <hr className="border-gray-600 mb-5" /> {/* Separator line */}
+        <div className="text-center w-full pt-12"> {/* Increased padding top */}
+          <h1 className="text-3xl font-semibold mb-6 text-sky-400">AttentID</h1>
+          <hr className="border-slate-600 mb-6" /> {/* Lighter separator */}
         </div>
-        <nav className="w-full">
-          <Link href="/checkpoints" className="block py-2 px-3 rounded hover:bg-accent hover:text-white text-center">
+        <nav className="w-full space-y-2">
+          <Link href="/checkpoints" className="block py-2.5 px-4 rounded-lg hover:bg-slate-700 hover:text-sky-300 transition-colors duration-150 text-center text-slate-200">
             Checkpoints
           </Link>
           {/* Example of a navigation link, if you want to add them later */}

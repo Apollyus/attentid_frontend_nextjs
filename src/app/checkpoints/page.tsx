@@ -1,4 +1,7 @@
+"use client"; // Make this a Client Component
 import React from 'react';
+import Link from 'next/link';
+import { ArrowLeftIcon, PlusCircleIcon } from '@heroicons/react/24/outline';
 
 interface Device {
   macAddress: string;
@@ -28,8 +31,23 @@ const CheckpointListPage = () => {
     <div className="min-h-screen flex justify-center items-center bg-gray-50 p-4 sm:p-6 lg:p-8">
       <div className="container mx-auto">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-800">Přehled Checkpointů</h1>
-          <p className="text-gray-600 mt-1">Seznam registrovaných zařízení a jejich detailů.</p>
+          <div className="flex justify-start items-center mb-4"> {/* Changed justify-between to justify-start */}
+            <Link href="/" className="flex items-center text-blue-600 hover:text-blue-800 transition-colors group">
+              <ArrowLeftIcon className="h-5 w-5 mr-2 transition-transform group-hover:-translate-x-1" />
+              <span className="text-sm font-medium">Zpět na hlavní menu</span>
+            </Link>
+          </div>
+          <h1 className="text-4xl font-bold text-gray-800 text-center">Přehled Checkpointů</h1>
+          <p className="text-gray-600 mt-1 text-center mb-6">Seznam registrovaných zařízení a jejich detailů.</p> {/* Added mb-6 */}
+          <div className="flex justify-end mb-4"> {/* New div for button, aligned to right */}
+            <button
+              onClick={() => alert("Funkce přidání zařízení bude implementována")}
+              className="flex items-center bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors"
+            >
+              <PlusCircleIcon className="h-5 w-5 mr-2" />
+              Přidat zařízení
+            </button>
+          </div>
         </header>
         
         <div className="shadow-xl rounded-lg overflow-hidden bg-white">

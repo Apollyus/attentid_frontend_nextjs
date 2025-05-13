@@ -1,8 +1,11 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link"; // Added for Home button
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
+// Import icons from Heroicons
+import { HomeIcon, ArrowLeftOnRectangleIcon } from '@heroicons/react/24/outline';
 // import type { Metadata } from "next"; // Metadata cannot be used in client components
 
 const geistSans = Geist({
@@ -43,6 +46,21 @@ export default function RootLayout({
               isSidebarOpen ? "ml-64" : "ml-0" // Adjust margin based on sidebar state
             }`}
           >
+            {/* Icons positioned at the top right of the main content area */}
+            <Link
+              href="/"
+              className="absolute top-6 right-20 bg-white hover:bg-gray-100 text-gray-700 rounded-full p-2 shadow-md transition-colors border border-gray-300 cursror-pointer"
+              title="Home"
+            >
+              <HomeIcon className="h-6 w-6" />
+            </Link>
+            <button
+              onClick={() => alert("Logout functionality to be implemented")}
+              className="absolute top-6 right-6 bg-white hover:bg-gray-100 text-gray-700 rounded-full p-2 shadow-md transition-colors border border-gray-300 cursor-pointer"
+              title="Logout"
+            >
+              <ArrowLeftOnRectangleIcon className="h-6 w-6" />
+            </button>
             {children}
           </main>
         </div>
