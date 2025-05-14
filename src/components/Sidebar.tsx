@@ -43,16 +43,20 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
         
         {/* Sidebar Content */}
         <div className="text-center w-full pt-12"> {/* Increased padding top */}
-          <h1 className="text-3xl font-semibold mb-6 text-sky-400">AttentID</h1>
+          <a href="./" className='p-4'>
+            <h1 className="text-3xl font-semibold mb-6 text-sky-400">AttentID</h1>
+          </a>
           <hr className="border-slate-600 mb-6" /> {/* Lighter separator */}
         </div>
         <nav className="w-full space-y-2">
           <Link href="/checkpoints" className="block py-2.5 px-4 rounded-lg hover:bg-slate-700 hover:text-sky-300 transition-colors duration-150 text-center text-slate-200">
-            Checkpoints
+            Checkpointy
+          </Link>
+          <Link href="/users" className="block py-2.5 px-4 rounded-lg hover:bg-slate-700 hover:text-sky-300 transition-colors duration-150 text-center text-slate-200">
+            Uživatelé
           </Link>
           {/* Example of a navigation link, if you want to add them later */}
           {/* <a href="#" className="block py-2 px-3 rounded hover:bg-accent hover:text-white">Dashboard</a>
-          <a href="#" className="block py-2 px-3 rounded hover:bg-accent hover:text-white mt-1">Users</a>
           <a href="#" className="block py-2 px-3 rounded hover:bg-accent hover:text-white mt-1">Settings</a> */}
         </nav>
       </aside>
