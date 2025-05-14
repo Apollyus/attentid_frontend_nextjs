@@ -6,7 +6,11 @@ import LoadingSpinner from './LoadingSpinner';
 
 const ITEMS_PER_PAGE = 10;
 
-const UserListComponent = () => {
+interface UserListComponentProps {
+  className?: string;
+}
+
+const UserListComponent: React.FC<UserListComponentProps> = ({ className = '' }) => {
   const { data: users, loading, error } = useDemoApi(true);
   const [currentPage, setCurrentPage] = React.useState(1);
 
@@ -23,7 +27,7 @@ const UserListComponent = () => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden">
+    <div className={`bg-white shadow-md rounded-lg overflow-hidden ${className}`}>
       <table className="min-w-full divide-y divide-gray-200">
         <thead className="bg-gray-50">
           <tr>

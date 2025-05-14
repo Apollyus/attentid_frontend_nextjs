@@ -34,10 +34,10 @@ export default function MapSection() {
   ];
 
   return (
-    <section className="mb-5 p-4 border border-secondary rounded-lg bg-background">
-      <h2 className="text-xl font-semibold text-primary mb-3">Mapa</h2>
+    <section className="mb-5 p-5">
+      {/*<h2 className="text-xl font-semibold text-primary mb-3">Mapa</h2>*/}
       <div className="h-96 rounded"> {/* Increased height for better map view */}
-        <MapContainer center={teplicePosition} zoom={13} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }} attributionControl={false}>
+        <MapContainer center={teplicePosition} zoom={13} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }} attributionControl={false} className="rounded-lg -z-30">
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
