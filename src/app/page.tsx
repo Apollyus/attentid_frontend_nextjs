@@ -1,17 +1,30 @@
-// Import pro styly, pokud budete používat CSS Modules (volitelné)
-// import styles from './admin.module.css';
-// import Sidebar from '@/components/Sidebar'; // Sidebar is now in layout.tsx
-import UserListComponent from '@/components/UserListComponent'; // Import the new user list
 import DynamicMapWrapper from '@/components/DynamicMapWrapper';
 import StatsBentoGrid from '@/components/StatsBentoGrid';
+import UserListComponent from '@/components/UserListComponent';
 
-// Hlavní komponenta stránky
 export default function Home() {
   return (
-    <>
-      <DynamicMapWrapper />
-      <StatsBentoGrid />
-      <UserListComponent className='p-5' /> {/* Use the new user list component */}
-    </>
+    <div className="space-y-6">
+      <div className="flex items-center justify-between py-6">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-800">Vítejte!</h1>
+          <p className="text-gray-600 mt-1">Sledujte přehledy výkonu a funkce aplikace</p>
+        </div>
+        <div className="text-right">
+          <p className="text-sm text-gray-500">{new Date().toLocaleDateString()}</p>
+        </div>
+      </div>
+
+      <div className="border-b border-gray-300 pb-6 h-fit">
+        <StatsBentoGrid />
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div>
+          <DynamicMapWrapper />
+        </div>
+        <UserListComponent showAsActivity={true} />
+      </div>
+    </div>
   );
 }
