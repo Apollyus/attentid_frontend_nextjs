@@ -1,6 +1,6 @@
 "use client";
 import Link from 'next/link';
-import { ChevronLeftIcon, ChevronRightIcon, HomeIcon, UserGroupIcon, ServerIcon, CloudIcon, DocumentTextIcon } from '@heroicons/react/24/outline';
+import { ChevronLeftIcon, ChevronRightIcon, HomeIcon, UserGroupIcon, ServerIcon, CloudIcon, DocumentTextIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -62,6 +62,10 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
           <Link href="#" className="flex items-center py-3 px-4 rounded-lg hover:bg-blue-200 transition-colors duration-150 text-gray-700">
             <DocumentTextIcon className="h-5 w-5 mr-3" />
             <span>Vystavit certifikát</span>
+          </Link>
+          <Link href="/test" className="flex items-center py-3 px-4 rounded-lg hover:bg-blue-200 transition-colors duration-150 text-gray-700">
+            <Cog6ToothIcon className="h-5 w-5 mr-3" />
+            <span>Test</span>
           </Link>
         </nav>
       </aside>
