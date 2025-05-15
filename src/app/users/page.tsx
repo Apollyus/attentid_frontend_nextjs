@@ -6,7 +6,7 @@ import { ArrowLeftIcon, PlusCircleIcon } from '@heroicons/react/24/outline';
 
 const UsersPage = () => {
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-50 p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen flex justify-center items-start p-4 sm:p-6 lg:p-8">
       <div className="container mx-auto">
         <header className="mb-8">
           <div className="flex justify-start items-center mb-4">

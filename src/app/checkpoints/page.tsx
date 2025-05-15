@@ -42,7 +42,7 @@ const CheckpointListPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex-center items-starts bg-gray-50 p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen flex-center items-starts p-4 sm:p-6 lg:p-8">
       <div className="container mx-auto">
         <header className="mb-8">
           <div className="flex justify-start items-center mb-4"> {/* Changed justify-between to justify-start */}

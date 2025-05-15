@@ -52,20 +52,6 @@ export default function RootLayout({
             }`}
           >
             <div className="container mx-auto px-6 py-6">
-              <div className="flex justify-end mb-6 gap-2">
-                <button
-                  className="bg-white hover:bg-gray-100 text-gray-700 rounded-full p-2 shadow-sm transition-colors border border-gray-100"
-                  title="Notifications"
-                >
-                  <BellIcon className="h-5 w-5" />
-                </button>
-                <div className="bg-white rounded-full shadow-sm p-0.5 border border-gray-100">
-                  <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-medium">
-                    A
-                  </div>
-                </div>
-              </div>
-              
               {children}
             </div>
           </main>
