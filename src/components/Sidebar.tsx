@@ -55,7 +55,7 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
             <UserGroupIcon className="h-5 w-5 mr-3" />
             <span>Uživatelé</span>
           </Link>
-          <Link href="#" className="flex items-center py-3 px-4 rounded-lg hover:bg-blue-200 transition-colors duration-150 text-gray-700">
+          <Link href="/mqtt" className="flex items-center py-3 px-4 rounded-lg hover:bg-blue-200 transition-colors duration-150 text-gray-700">
             <CloudIcon className="h-5 w-5 mr-3" />
             <span>MQTT</span>
           </Link>
