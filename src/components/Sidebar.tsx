@@ -1,6 +1,7 @@
 "use client";
 import Link from 'next/link';
 import { ChevronLeftIcon, ChevronRightIcon, HomeIcon, UserGroupIcon, ServerIcon, CloudIcon, DocumentTextIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
+import { useAuth } from '@/hooks/useAuth'; // Change this line
 
 interface SidebarProps {
   isOpen: boolean;
@@ -8,6 +9,8 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
+  const { logout } = useAuth();
+
   return (
     <>
       {!isOpen && (
@@ -68,6 +71,17 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
             <span>Test</span>
           </Link>
         </nav>
+        <div className="mt-auto border-t border-blue-200 pt-4">
+          <button 
+            onClick={logout}
+            className="flex items-center w-full py-3 px-4 rounded-lg hover:bg-red-100 transition-colors duration-150 text-red-600"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
+            <span>Odhlásit se</span>
+          </button>
+        </div>
       </aside>
     </>
   );
